@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# athcool	This shell script takes care of starting athcool
+#
+# chkconfig:    2345 69 31
+# description:	set power saving bit on Athlons(TM) with athcool
+# processname:	athcool
+
+# Source function library.
+. /etc/rc.d/init.d/functions
+
+# See how we were called.
+case "$1" in
+  start|restart)
+  	run_cmd "Starting Athlon Cooling" athcool on
+	;;
+  stop)
+  	run_cmd "Stoping Athlon Cooling" athcool off
+	;;
+  status)
+  	athcool stat
+	;;
+  *)
+	msg_usage "$0 {start|stop|restart|status}"
+	exit 1
+esac
