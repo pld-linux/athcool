@@ -12,6 +12,7 @@ License:	GPL v2
 Group:		Applications/System
 Source0:	http://members.jcom.home.ne.jp/jacobi/linux/files/%{name}-%{version}.tar.gz
 # Source0-md5:	a97a48071d0af234fbc788b7ee82878e
+Source1:	%{name}.init
 Patch0:		%{name}-DESTDIR.patch
 URL:		http://members.jcom.home.ne.jp/jacobi/linux/softwares-ja.html
 BuildPrereq:	pciutils-devel
@@ -51,8 +52,11 @@ enable when STPGNT detected" w mostku pó³nocnym chipsetu.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT/etc/rc.d/init.d
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+install %{SOURCE1} $RPM_BUILD_ROOT/etc/rc.d/init.d/%{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -61,3 +65,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README ChangeLog
 %attr(755,root,root) %{_sbindir}/athcool
+%attr(755,root,root) /etc/rc.d/init.d/%{name}
