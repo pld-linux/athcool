@@ -78,4 +78,4 @@ fi
 %doc README ChangeLog
 %attr(755,root,root) %{_sbindir}/athcool
 %attr(754,root,root) /etc/rc.d/init.d/%{name}
-%attr(644,root,root) %config(noreplace) /etc/sysconfig/%{name}
+%config(noreplace) %verify(not size mtime md5) /etc/sysconfig/%{name}
