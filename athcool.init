@@ -9,13 +9,22 @@
 # Source function library.
 . /etc/rc.d/init.d/functions
 
+ATHCOOL_RUN=no
+
+# Get service config
+[ -f /etc/sysconfig/athcool ] && . /etc/sysconfig/athcool
+
 # See how we were called.
 case "$1" in
   start|restart|force-reload)
-  	run_cmd "Starting Athlon Cooling" athcool on
+  	if [ "$ATHCOOL_RUN" = "yes" ]; do
+		run_cmd "Starting Athlon Cooling" athcool on
+	done
 	;;
   stop)
-  	run_cmd "Stoping Athlon Cooling" athcool off
+  	if [ "$ATHCOOL_RUN" = "yes" ]; do
+		run_cmd "Stoping Athlon Cooling" athcool off
+	done	
 	;;
   status)
   	athcool stat
