@@ -1,18 +1,18 @@
 # TODO:
 # - convert Japanese to EUCJP
-# - make init-script (?)
 #
 Summary:	Athlon Powersaving bits enabler
 Summary(ja):	AMD Athlon/Duron $B$N>JEENO5!G=$rM-8z$K$9$k(B
 Summary(pl):	Narzêdzie do w³±czania trybu oszczêdno¶ci energii procesorów Athlon
 Name:		athcool
 Version:	0.3.0
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Applications/System
 Source0:	http://members.jcom.home.ne.jp/jacobi/linux/files/%{name}-%{version}.tar.gz
 # Source0-md5:	a97a48071d0af234fbc788b7ee82878e
 Source1:	%{name}.init
+Source2:	%{name}.sysconfig
 Patch0:		%{name}-DESTDIR.patch
 URL:		http://members.jcom.home.ne.jp/jacobi/linux/softwares-ja.html
 BuildRequires:	pciutils-devel
@@ -56,12 +56,13 @@ Tryb oszczêdno¶ci energii dzia³a gdy j±dro zawiera wsparcie dla ACPI
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/etc/rc.d/init.d
+install -d $RPM_BUILD_ROOT/etc/{rc.d/init.d,sysconfig}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 install %{SOURCE1} $RPM_BUILD_ROOT/etc/rc.d/init.d/%{name}
+install %{SOURCE2} $RPM_BUILD_ROOT/etc/sysconfig/%{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -79,3 +80,4 @@ fi
 %doc README ChangeLog
 %attr(755,root,root) %{_sbindir}/athcool
 %attr(755,root,root) /etc/rc.d/init.d/%{name}
+%attr(644,root,root) %config(noreplace) /etc/sysconfig/%{name}
