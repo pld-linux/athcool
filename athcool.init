@@ -18,7 +18,7 @@ ATHCOOL_RUN=no
 case "$1" in
   start|restart|force-reload)
   	if [ "$ATHCOOL_RUN" = "yes" ]; then
-		run_cmd "Starting Athlon Cooling" athcool on
+		run_cmd "Starting Athlon Cooling" athcool on fix
 	fi
 	;;
   stop)
