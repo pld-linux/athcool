@@ -11,7 +11,7 @@
 
 # See how we were called.
 case "$1" in
-  start|restart)
+  start|restart|force-reload)
   	run_cmd "Starting Athlon Cooling" athcool on
 	;;
   stop)
@@ -21,6 +21,6 @@ case "$1" in
   	athcool stat
 	;;
   *)
-	msg_usage "$0 {start|stop|restart|status}"
-	exit 1
+	msg_usage "$0 {start|stop|restart|force-reload|status}"
+	exit 3
 esac
