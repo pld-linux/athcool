@@ -1,22 +1,22 @@
-# TODO: convert Japanese to EUCJP
+# TODO:
+# - convert Japanese to EUCJP
+# - make init-script (?)
 #
 Summary:	Athlon Powersaving bits enabler
 Summary(ja):	AMD Athlon/Duron $B$N>JEENO5!G=$rM-8z$K$9$k(B
 Summary(pl):	Narzêdzie do w³±czania trybu oszczêdno¶ci energii procesorów Athlon
 Name:		athcool
 Version:	0.3.0
-Release:	1vl1
+Release:	0.1
 License:	GPL
 Group:		Applications/System
+#Source0:	http://members.jcom.home.ne.jp/jacobi/linux/files/%{name}-%{version}.tar.gz
+Source0:	http://piorun.ds.pg.gda.pl/~blues/SOURCES/%{name}-%{version}.tar.gz
+# Source0-md5:	a97a48071d0af234fbc788b7ee82878e
 URL:		http://members.jcom.home.ne.jp/jacobi/linux/softwares-ja.html
-Source0:	http://members.jcom.home.ne.jp/jacobi/linux/files/%{name}-%{version}.tar.gz
-# Source0-md5:	d41d8cd98f00b204e9800998ecf8427e
-#Patch1: athcool-0.2.0-nakata1.patch
-#Patch2: athcool-0.2.0-nakata2.patch
 BuildPrereq:	pciutils-devel
-Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 ExclusiveArch:	%{ix86}
-Vendor:		Project Vine
+Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 athcool is a small utility, enabling/disabling Powersaving mode for
@@ -44,8 +44,6 @@ enable when STPGNT detected" w mostku pó³nocnym chipsetu.
 
 %prep
 %setup -q
-#%patch1 -p1
-#%patch2 -p1
 
 %build
 %{__make}
