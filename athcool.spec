@@ -77,5 +77,5 @@ fi
 %defattr(644,root,root,755)
 %doc README ChangeLog
 %attr(755,root,root) %{_sbindir}/athcool
-%attr(755,root,root) /etc/rc.d/init.d/%{name}
+%attr(754,root,root) /etc/rc.d/init.d/%{name}
 %attr(644,root,root) %config(noreplace) /etc/sysconfig/%{name}
