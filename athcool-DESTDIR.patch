@@ -1,0 +1,33 @@
+--- ./Makefile.org	Sat Jun 21 07:38:54 2003
++++ ./Makefile	Tue Aug  5 23:58:44 2003
+@@ -11,8 +11,9 @@
+ CC	= gcc
+ LD	= $(CC)
+ RM	= rm -f
+-CFLAGS	= -O2 -Wall
+-LDFLAGS = $(CFLAGS)
++FLAGS	= -O2 -Wall
++CFLAGS	=
++LDFLAGS =
+ DEF     = -I. -I$(includedir)
+ LIBPCI  = -lpci
+ LDLIBS	= $(LIBPCI)
+@@ -25,14 +26,14 @@
+ all: $(PACKAGE)
+ 
+ $(PACKAGE): $(OBJS)
+-	$(CC) $(CFLAGS) $(OBJS) $(LDLIBS) -o $@
++	$(CC) $(FLAGS) $(CFLAGS) $(OBJS) $(LDLIBS) -o $@
+ 
+ install::
+-	install -d $(sbindir)
+-	install -s $(PACKAGE) $(sbindir)
++	install -d $(DESTDIR)$(sbindir)
++	install -s $(PACKAGE) $(DESTDIR)$(sbindir)
+ 
+ .c.o:
+-	$(CC) $(CFLAGS) $(DEF) -c $< -o $@
++	$(CC) $(FLAGS) $(CFLAGS) $(DEF) -c $< -o $@
+ 
+ clean:
+ 	-$(RM) $(PACKAGE) *.o core *~ a.out test
