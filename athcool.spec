@@ -3,7 +3,7 @@ Summary(ja):	AMD Athlon/Duron ¤Î¾ÊÅÅÎÏµ¡Ç½¤òÍ­¸ú¤Ë¤¹¤ë
 Summary(pl):	Narzêdzie do w³±czania trybu oszczêdno¶ci energii procesorów Athlon
 Name:		athcool
 Version:	0.3.0
-Release:	3
+Release:	4
 License:	GPL v2
 Group:		Applications/System
 Source0:	http://members.jcom.home.ne.jp/jacobi/linux/files/%{name}-%{version}.tar.gz
