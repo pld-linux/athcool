@@ -15,7 +15,8 @@ Source0:	http://members.jcom.home.ne.jp/jacobi/linux/files/%{name}-%{version}.ta
 Source1:	%{name}.init
 Patch0:		%{name}-DESTDIR.patch
 URL:		http://members.jcom.home.ne.jp/jacobi/linux/softwares-ja.html
-BuildPrereq:	pciutils-devel
+BuildRequires:	pciutils-devel
+PreReq:		rc-scripts
 Requires(post,postun):	/sbin/chkconfig
 ExclusiveArch:	%{ix86}
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -37,23 +38,26 @@ URL $B$r;2>H(B $B$N>e$G;HMQ$7$F$/$@$5$$!#(B
 $B!!$J$*!">JEENO5!G=$K$O(B ACPI $BBP1~$N%+!<%M%k$,I,MW$G$9!#(B
 
 %description -l pl
-athcool jest ma³ym programem narzêdziwym s³u¿acym do w³±czania i wy³±czania
-trybu oszczêdno¶ci energii procesorów AMD Athlon/Duron.
+athcool jest ma³ym programem narzêdziwym s³u¿acym do w³±czania i
+wy³±czania trybu oszczêdno¶ci energii procesorów AMD Athlon/Duron.
 
-Tryb oszczêdno¶ci energii dzia³a gdy j±dro zawiera wsparcie dla ACPI (z APM
-nie dzia³a), gdy¿ athcool jedynie ustawia/zeruje flagi bitowe "Disconnect
-enable when STPGNT detected" w mostku pó³nocnym chipsetu.
+Tryb oszczêdno¶ci energii dzia³a gdy j±dro zawiera wsparcie dla ACPI
+(z APM nie dzia³a), gdy¿ athcool jedynie ustawia/zeruje flagi bitowe
+"Disconnect enable when STPGNT detected" w mostku pó³nocnym chipsetu.
 
 %prep
 %setup -q
 %patch0 -p1
 
 %build
-%{__make}
+%{__make} \
+	CC="%{__cc}" \
+	CFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT/etc/rc.d/init.d
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
