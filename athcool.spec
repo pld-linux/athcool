@@ -8,10 +8,9 @@ Summary(pl):	Narzêdzie do w³±czania trybu oszczêdno¶ci energii procesorów Athlon
 Name:		athcool
 Version:	0.3.0
 Release:	0.1
-License:	GPL
+License:	GPL v2
 Group:		Applications/System
-#Source0:	http://members.jcom.home.ne.jp/jacobi/linux/files/%{name}-%{version}.tar.gz
-Source0:	http://piorun.ds.pg.gda.pl/~blues/SOURCES/%{name}-%{version}.tar.gz
+Source0:	http://members.jcom.home.ne.jp/jacobi/linux/files/%{name}-%{version}.tar.gz
 # Source0-md5:	a97a48071d0af234fbc788b7ee82878e
 URL:		http://members.jcom.home.ne.jp/jacobi/linux/softwares-ja.html
 BuildPrereq:	pciutils-devel
@@ -50,14 +49,13 @@ enable when STPGNT detected" w mostku pó³nocnym chipsetu.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-#install -d $RPM_BUILD_ROOT%{_sbindir}
-#install -m755 -s athcool $RPM_BUILD_ROOT%{_sbindir}
-%makeinstall
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README COPYING ChangeLog
+%doc README ChangeLog
 %attr(755,root,root) %{_sbindir}/athcool
