@@ -1,8 +1,6 @@
-# TODO:
-# - convert Japanese to EUCJP
-#
+
 Summary:	Athlon Powersaving bits enabler
-Summary(ja):	AMD Athlon/Duron $B$N>JEENO5!G=$rM-8z$K$9$k(B
+Summary(ja):	AMD Athlon/Duron ¤Î¾ÊÅÅÎÏµ¡Ç½¤òÍ­¸ú¤Ë¤¹¤ë
 Summary(pl):	Narzêdzie do w³±czania trybu oszczêdno¶ci energii procesorów Athlon
 Name:		athcool
 Version:	0.3.0
@@ -30,15 +28,15 @@ athcool only set/unset "Disconnect enable when STPGNT detected" bits
 in the Northbridge of Chipset.
 
 %description -l ja
-$B!!(Bathcool $B$O(B AMD Athlon/Duron
-$B$N>JEENO5!G=$rM-8z$K$7!"L5BL$JH/G.$rM^$($^$9!#(B CPU
-$BMxMQN($,Dc$$;~$K$O7`E*$KH/G.$,8:$j$^$9!#(B
-$B!!%A%C%W%;%C%H$K$h$C$F$O@5>o$K:nF0$7$J$$>l9g$b$"$j$^$9$N$G!">e5-(B
-URL $B$r;2>H(B $B$N>e$G;HMQ$7$F$/$@$5$$!#(B
-$B!!$J$*!">JEENO5!G=$K$O(B ACPI $BBP1~$N%+!<%M%k$,I,MW$G$9!#(B
+¡¡athcool ¤Ï AMD Athlon/Duron
+¤Î¾ÊÅÅÎÏµ¡Ç½¤òÍ­¸ú¤Ë¤·¡¢ÌµÂÌ¤ÊÈ¯Ç®¤òÍÞ¤¨¤Þ¤¹¡£ CPU
+ÍøÍÑÎ¨¤¬Äã¤¤»þ¤Ë¤Ï·àÅª¤ËÈ¯Ç®¤¬¸º¤ê¤Þ¤¹¡£
+¡¡¥Á¥Ã¥×¥»¥Ã¥È¤Ë¤è¤Ã¤Æ¤ÏÀµ¾ï¤ËºîÆ°¤·¤Ê¤¤¾ì¹ç¤â¤¢¤ê¤Þ¤¹¤Î¤Ç¡¢¾åµ­
+URL ¤ò»²¾È ¤Î¾å¤Ç»ÈÍÑ¤·¤Æ¤¯¤À¤µ¤¤¡£ ¡¡¤Ê¤ª¡¢¾ÊÅÅÎÏµ¡Ç½¤Ë¤Ï ACPI
+ÂÐ±þ¤Î¥«¡¼¥Í¥ë¤¬É¬Í×¤Ç¤¹¡£
 
 %description -l pl
-athcool jest ma³ym programem narzêdziwym s³u¿acym do w³±czania i
+athcool jest ma³ym programem narzêdziowym s³u¿±cym do w³±czania i
 wy³±czania trybu oszczêdno¶ci energii procesorów AMD Athlon/Duron.
 
 Tryb oszczêdno¶ci energii dzia³a gdy j±dro zawiera wsparcie dla ACPI
