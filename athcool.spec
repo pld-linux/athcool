@@ -18,12 +18,12 @@ ExclusiveArch:	%{ix86}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-athcool is a small utility, enabling/disabling Powersaving mode for
+athcool is a small utility for enabling/disabling powersaving mode on
 AMD Athlon/Duron processors.
 
-Powersaving works if your kernel support ACPI (APM not work), because
-athcool only set/unset "Disconnect enable when STPGNT detected" bits
-in the Northbridge of Chipset.
+Powersaving works if your kernel supports ACPI (APM doesn't work),
+because athcool only sets/unsets "Disconnect enable when STPGNT
+detected" bits in the northern bridge of the chipset.
 
 %description -l ja
 ¡¡athcool ¤Ï AMD Athlon/Duron
@@ -37,7 +37,7 @@ URL ¤ò»²¾È ¤Î¾å¤Ç»ÈÍÑ¤·¤Æ¤¯¤À¤µ¤¤¡£ ¡¡¤Ê¤ª¡¢¾ÊÅÅÎÏµ¡Ç½¤Ë¤Ï ACPI
 athcool jest ma³ym programem narzêdziowym s³u¿±cym do w³±czania i
 wy³±czania trybu oszczêdno¶ci energii procesorów AMD Athlon/Duron.
 
-Tryb oszczêdno¶ci energii dzia³a gdy j±dro zawiera wsparcie dla ACPI
+Tryb oszczêdno¶ci energii dzia³a, gdy j±dro zawiera wsparcie dla ACPI
 (z APM nie dzia³a), gdy¿ athcool jedynie ustawia/zeruje flagi bitowe
 "Disconnect enable when STPGNT detected" w mostku pó³nocnym chipsetu.
 
