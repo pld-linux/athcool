@@ -2,16 +2,15 @@ Summary:	Athlon Powersaving bits enabler
 Summary(ja):	AMD Athlon/Duron ¤Î¾ÊÅÅÎÏµ¡Ç½¤òÍ­¸ú¤Ë¤¹¤ë
 Summary(pl):	Narzêdzie do w³±czania trybu oszczêdno¶ci energii procesorów Athlon
 Name:		athcool
-Version:	0.3.0
-Release:	4
+Version:	0.3.5
+Release:	1
 License:	GPL v2
 Group:		Applications/System
 Source0:	http://members.jcom.home.ne.jp/jacobi/linux/files/%{name}-%{version}.tar.gz
-# Source0-md5:	a97a48071d0af234fbc788b7ee82878e
+# Source0-md5:	6611dfbe78dfdcde4612e53e2537075d
 Source1:	%{name}.init
 Source2:	%{name}.sysconfig
-Patch0:		%{name}-DESTDIR.patch
-URL:		http://members.jcom.home.ne.jp/jacobi/linux/softwares-ja.html
+URL:		http://members.jcom.home.ne.jp/jacobi/linux/softwares.html
 BuildRequires:	pciutils-devel
 PreReq:		rc-scripts
 Requires(post,postun):	/sbin/chkconfig
@@ -44,7 +43,6 @@ Tryb oszczêdno¶ci energii dzia³a gdy j±dro zawiera wsparcie dla ACPI
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %{__make} \
@@ -78,3 +76,4 @@ fi
 %attr(755,root,root) %{_sbindir}/athcool
 %attr(754,root,root) /etc/rc.d/init.d/%{name}
 %config(noreplace) %verify(not size mtime md5) /etc/sysconfig/%{name}
+%{_mandir}/man8/*
