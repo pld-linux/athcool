@@ -16,6 +16,7 @@ Source1:	%{name}.init
 Patch0:		%{name}-DESTDIR.patch
 URL:		http://members.jcom.home.ne.jp/jacobi/linux/softwares-ja.html
 BuildPrereq:	pciutils-devel
+Requires(post,postun):	/sbin/chkconfig
 ExclusiveArch:	%{ix86}
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -60,6 +61,14 @@ install %{SOURCE1} $RPM_BUILD_ROOT/etc/rc.d/init.d/%{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post
+/sbin/chkconfig --add athcool
+
+%preun
+if [ "$1" = "0" ]; then
+	/sbin/chkconfig --del athcool
+fi
 
 %files
 %defattr(644,root,root,755)
