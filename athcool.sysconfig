@@ -12,3 +12,8 @@
 #
 # If you still want this - uncomment this line:
 #ATHCOOL_RUN=yes
+
+# Action that athcool should perform when starting service. Normally it is
+# "on" or "on fixup", but some people nead to turnoff powersaving bit
+# on startup.
+ATHCOOL_ACTION="on fixup"

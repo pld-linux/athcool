@@ -3,13 +3,14 @@
 # athcool	This shell script takes care of starting athcool
 #
 # chkconfig:    2345 69 31
-# description:	set power saving bit on Athlons(TM) with athcool
+# description:	set/unset power saving bit on Athlons(TM) with athcool
 # processname:	athcool
 
 # Source function library.
 . /etc/rc.d/init.d/functions
 
 ATHCOOL_RUN=no
+ATHCOOL_ACTION="on fixup"
 
 # Get service config
 [ -f /etc/sysconfig/athcool ] && . /etc/sysconfig/athcool
@@ -18,7 +19,7 @@ ATHCOOL_RUN=no
 case "$1" in
   start|restart|force-reload)
   	if [ "$ATHCOOL_RUN" = "yes" ]; then
-		run_cmd "Starting Athlon Cooling" athcool on fix
+		run_cmd "Starting Athlon Cooling" athcool $ATHCOOL_ACTION
 	fi
 	;;
   stop)
