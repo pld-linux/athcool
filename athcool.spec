@@ -16,7 +16,7 @@ BuildRequires:	pciutils-devel
 PreReq:		rc-scripts
 Requires(post,postun):	/sbin/chkconfig
 ExclusiveArch:	%{ix86}
-Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 athcool is a small utility, enabling/disabling Powersaving mode for
