@@ -7,11 +7,12 @@ Summary(ja):	AMD Athlon/Duron $B$N>JEENO5!G=$rM-8z$K$9$k(B
 Summary(pl):	Narzêdzie do w³±czania trybu oszczêdno¶ci energii procesorów Athlon
 Name:		athcool
 Version:	0.3.0
-Release:	0.1
+Release:	0.9
 License:	GPL v2
 Group:		Applications/System
 Source0:	http://members.jcom.home.ne.jp/jacobi/linux/files/%{name}-%{version}.tar.gz
 # Source0-md5:	a97a48071d0af234fbc788b7ee82878e
+Patch0:		%{name}-DESTDIR.patch
 URL:		http://members.jcom.home.ne.jp/jacobi/linux/softwares-ja.html
 BuildPrereq:	pciutils-devel
 ExclusiveArch:	%{ix86}
@@ -43,6 +44,7 @@ enable when STPGNT detected" w mostku pó³nocnym chipsetu.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__make}
