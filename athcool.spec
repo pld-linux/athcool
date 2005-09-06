@@ -2,12 +2,12 @@ Summary:	Athlon Powersaving bits enabler
 Summary(ja):	AMD Athlon/Duron ¤Î¾ÊÅÅÎÏµ¡Ç½¤òÍ­¸ú¤Ë¤¹¤ë
 Summary(pl):	Narzêdzie do w³±czania trybu oszczêdno¶ci energii procesorów Athlon
 Name:		athcool
-Version:	0.3.10
+Version:	0.3.11
 Release:	1
 License:	GPL v2
 Group:		Applications/System
 Source0:	http://members.jcom.home.ne.jp/jacobi/linux/files/%{name}-%{version}.tar.gz
-# Source0-md5:	cc860594ea740acb5efc380e411ca05e
+# Source0-md5:	4f550f9aaaa68a01d1e8ae31491e5406
 Source1:	%{name}.init
 Source2:	%{name}.sysconfig
 URL:		http://members.jcom.home.ne.jp/jacobi/linux/softwares.html
