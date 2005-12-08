@@ -25,7 +25,7 @@ case "$1" in
   stop)
   	if [ "$ATHCOOL_RUN" = "yes" ]; then
 		run_cmd "Stoping Athlon Cooling" athcool off
-	fi	
+	fi
 	;;
   status)
   	athcool stat
