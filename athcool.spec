@@ -12,8 +12,8 @@ Source1:	%{name}.init
 Source2:	%{name}.sysconfig
 URL:		http://members.jcom.home.ne.jp/jacobi/linux/softwares.html
 BuildRequires:	pciutils-devel
-PreReq:		rc-scripts
 Requires(post,postun):	/sbin/chkconfig
+Requires:	rc-scripts
 ExclusiveArch:	%{ix86}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -29,8 +29,8 @@ detected" bits in the northern bridge of the chipset.
 　athcool は AMD Athlon/Duron
 の省電力機能を有効にし、無駄な発熱を抑えます。 CPU
 利用率が低い時には劇的に発熱が減ります。
-　チップセットによっては正常に作動しない場合もありますので、上記
-URL を参照 の上で使用してください。 　なお、省電力機能には ACPI
+　チップセットによっては正常に作動しない場合もありますので、上記 URL
+を参照 の上で使用してください。 　なお、省電力機能には ACPI
 対応のカーネルが必要です。
 
 %description -l pl
@@ -75,5 +75,5 @@ fi
 %doc README ChangeLog
 %attr(755,root,root) %{_sbindir}/athcool
 %attr(754,root,root) /etc/rc.d/init.d/%{name}
-%config(noreplace) %verify(not size mtime md5) /etc/sysconfig/%{name}
+%config(noreplace) %verify(not md5 mtime size) /etc/sysconfig/%{name}
 %{_mandir}/man8/*
