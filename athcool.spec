@@ -12,6 +12,7 @@ Source1:	%{name}.init
 Source2:	%{name}.sysconfig
 URL:		http://members.jcom.home.ne.jp/jacobi/linux/softwares.html
 BuildRequires:	pciutils-devel
+BuildRequires:	rpmbuild(macros) >= 1.268
 Requires(post,postun):	/sbin/chkconfig
 Requires:	rc-scripts
 ExclusiveArch:	%{ix86}
@@ -64,9 +65,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 /sbin/chkconfig --add athcool
+%service athcool restart
 
 %preun
 if [ "$1" = "0" ]; then
+	%service athcool stop
 	/sbin/chkconfig --del athcool
 fi
 
