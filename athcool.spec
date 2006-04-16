@@ -13,7 +13,7 @@ Source2:	%{name}.sysconfig
 URL:		http://members.jcom.home.ne.jp/jacobi/linux/softwares.html
 BuildRequires:	pciutils-devel
 BuildRequires:	rpmbuild(macros) >= 1.268
-Requires(post,postun):	/sbin/chkconfig
+Requires(post,preun):	/sbin/chkconfig
 Requires:	rc-scripts
 ExclusiveArch:	%{ix86}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
