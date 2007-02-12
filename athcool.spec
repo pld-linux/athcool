@@ -1,6 +1,6 @@
 Summary:	Athlon Powersaving bits enabler
-Summary(ja.UTF-8):   AMD Athlon/Duron の省電力機能を有効にする
-Summary(pl.UTF-8):   Narzędzie do włączania trybu oszczędności energii procesorów Athlon
+Summary(ja.UTF-8):	AMD Athlon/Duron の省電力機能を有効にする
+Summary(pl.UTF-8):	Narzędzie do włączania trybu oszczędności energii procesorów Athlon
 Name:		athcool
 Version:	0.3.11
 Release:	1
