@@ -1,6 +1,6 @@
 Summary:	Athlon Powersaving bits enabler
-Summary(ja):	AMD Athlon/Duron ¤Î¾ÊÅÅÎÏµ¡Ç½¤òÍ­¸ú¤Ë¤¹¤ë
-Summary(pl):	Narzêdzie do w³±czania trybu oszczêdno¶ci energii procesorów Athlon
+Summary(ja.UTF-8):   AMD Athlon/Duron ã®çœé›»åŠ›æ©Ÿèƒ½ã‚’æœ‰åŠ¹ã«ã™ã‚‹
+Summary(pl.UTF-8):   NarzÄ™dzie do wÅ‚Ä…czania trybu oszczÄ™dnoÅ›ci energii procesorÃ³w Athlon
 Name:		athcool
 Version:	0.3.11
 Release:	1
@@ -26,21 +26,21 @@ Powersaving works if your kernel supports ACPI (APM doesn't work),
 because athcool only sets/unsets "Disconnect enable when STPGNT
 detected" bits in the northern bridge of the chipset.
 
-%description -l ja
-¡¡athcool ¤Ï AMD Athlon/Duron
-¤Î¾ÊÅÅÎÏµ¡Ç½¤òÍ­¸ú¤Ë¤·¡¢ÌµÂÌ¤ÊÈ¯Ç®¤òÍŞ¤¨¤Ş¤¹¡£ CPU
-ÍøÍÑÎ¨¤¬Äã¤¤»ş¤Ë¤Ï·àÅª¤ËÈ¯Ç®¤¬¸º¤ê¤Ş¤¹¡£
-¡¡¥Á¥Ã¥×¥»¥Ã¥È¤Ë¤è¤Ã¤Æ¤ÏÀµ¾ï¤ËºîÆ°¤·¤Ê¤¤¾ì¹ç¤â¤¢¤ê¤Ş¤¹¤Î¤Ç¡¢¾åµ­ URL
-¤ò»²¾È ¤Î¾å¤Ç»ÈÍÑ¤·¤Æ¤¯¤À¤µ¤¤¡£ ¡¡¤Ê¤ª¡¢¾ÊÅÅÎÏµ¡Ç½¤Ë¤Ï ACPI
-ÂĞ±ş¤Î¥«¡¼¥Í¥ë¤¬É¬Í×¤Ç¤¹¡£
+%description -l ja.UTF-8
+ã€€athcool ã¯ AMD Athlon/Duron
+ã®çœé›»åŠ›æ©Ÿèƒ½ã‚’æœ‰åŠ¹ã«ã—ã€ç„¡é§„ãªç™ºç†±ã‚’æŠ‘ãˆã¾ã™ã€‚ CPU
+åˆ©ç”¨ç‡ãŒä½ã„æ™‚ã«ã¯åŠ‡çš„ã«ç™ºç†±ãŒæ¸›ã‚Šã¾ã™ã€‚
+ã€€ãƒãƒƒãƒ—ã‚»ãƒƒãƒˆã«ã‚ˆã£ã¦ã¯æ­£å¸¸ã«ä½œå‹•ã—ãªã„å ´åˆã‚‚ã‚ã‚Šã¾ã™ã®ã§ã€ä¸Šè¨˜ URL
+ã‚’å‚ç…§ ã®ä¸Šã§ä½¿ç”¨ã—ã¦ãã ã•ã„ã€‚ ã€€ãªãŠã€çœé›»åŠ›æ©Ÿèƒ½ã«ã¯ ACPI
+å¯¾å¿œã®ã‚«ãƒ¼ãƒãƒ«ãŒå¿…è¦ã§ã™ã€‚
 
-%description -l pl
-athcool jest ma³ym programem narzêdziowym s³u¿±cym do w³±czania i
-wy³±czania trybu oszczêdno¶ci energii procesorów AMD Athlon/Duron.
+%description -l pl.UTF-8
+athcool jest maÅ‚ym programem narzÄ™dziowym sÅ‚uÅ¼Ä…cym do wÅ‚Ä…czania i
+wyÅ‚Ä…czania trybu oszczÄ™dnoÅ›ci energii procesorÃ³w AMD Athlon/Duron.
 
-Tryb oszczêdno¶ci energii dzia³a, gdy j±dro zawiera wsparcie dla ACPI
-(z APM nie dzia³a), gdy¿ athcool jedynie ustawia/zeruje flagi bitowe
-"Disconnect enable when STPGNT detected" w mostku pó³nocnym chipsetu.
+Tryb oszczÄ™dnoÅ›ci energii dziaÅ‚a, gdy jÄ…dro zawiera wsparcie dla ACPI
+(z APM nie dziaÅ‚a), gdyÅ¼ athcool jedynie ustawia/zeruje flagi bitowe
+"Disconnect enable when STPGNT detected" w mostku pÃ³Å‚nocnym chipsetu.
 
 %prep
 %setup -q
