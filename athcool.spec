@@ -48,7 +48,8 @@ Tryb oszczędności energii działa, gdy jądro zawiera wsparcie dla ACPI
 %build
 %{__make} \
 	CC="%{__cc}" \
-	CFLAGS="%{rpmcflags}"
+	CFLAGS="%{rpmcflags}" \
+	LIBS="-lpci -lz"
 
 %install
 rm -rf $RPM_BUILD_ROOT
