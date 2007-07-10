@@ -12,6 +12,7 @@ Source1:	%{name}.init
 Source2:	%{name}.sysconfig
 URL:		http://members.jcom.home.ne.jp/jacobi/linux/softwares.html
 BuildRequires:	pciutils-devel
+BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.268
 Requires(post,preun):	/sbin/chkconfig
 Requires:	rc-scripts
@@ -49,7 +50,7 @@ Tryb oszczędności energii działa, gdy jądro zawiera wsparcie dla ACPI
 %{__make} \
 	CC="%{__cc}" \
 	CFLAGS="%{rpmcflags}" \
-	LIBS="-lpci -lz"
+	LIBS="`pkg-config --libs libpci`"
 
 %install
 rm -rf $RPM_BUILD_ROOT
