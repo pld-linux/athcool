@@ -4,7 +4,7 @@ Summary(pl.UTF-8):	Narzędzie do włączania trybu oszczędności energii proces
 Name:		athcool
 Version:	0.3.11
 Release:	1
-License:	GPL v2
+License:	GPL v2+
 Group:		Applications/System
 Source0:	http://members.jcom.home.ne.jp/jacobi/linux/files/%{name}-%{version}.tar.gz
 # Source0-md5:	4f550f9aaaa68a01d1e8ae31491e5406
